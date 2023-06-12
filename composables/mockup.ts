@@ -3,22 +3,22 @@ export const useTags = () => {
         {
             "tagID": "1",
             "tagColor": "#ff0000",
-            "tagName": "SNT"
+            "label": "SNT"
         },
         {
             "tagID": "2",
             "tagColor": "#ffff00",
-            "tagName": "NSI"
+            "label": "NSI"
         },
         {
             "tagID": "3",
             "tagColor": "#00ff00",
-            "tagName": "Corrigé"
+            "label": "Corrigé"
         },
         {
             "tagID": "4",
             "tagColor": "#00ffff",
-            "tagName": "Pas Corrigé"
+            "label": "Pas Corrigé"
         },
     ])
     return tags
@@ -28,47 +28,47 @@ export const useActiTags = () => {
     const actiTags = [
         {
             "nid": "1325993",
-            "tid": [1, 2]
+            "tid": ["1", "2"]
         },
         {
             "nid": "1335649",
-            "tid": [1, 2]
+            "tid": ["1", "2"]
         },
         {
             "nid": "1335679",
-            "tid": [1, 2]
+            "tid": ["1", "2"]
         },
         {
             "nid": "1335859",
-            "tid": [1, 2]
+            "tid": ["1", "2"]
         },
         {
             "nid": "1366390",
-            "tid": [1, 2]
+            "tid": ["1", "2"]
         },
         {
             "nid": "1394485",
-            "tid": [1, 2]
+            "tid": ["1", "2"]
         },
         {
             "nid": "1435331",
-            "tid": [1, 2]
+            "tid": ["1", "2"]
         },
         {
             "nid": "1442499",
-            "tid": [1, 2]
+            "tid": ["1", "2"]
         },
         {
             "nid": "1454256",
-            "tid": [1, 2]
+            "tid": ["1", "2"]
         },
         {
             "nid": "1499408",
-            "tid": [1, 2]
+            "tid": ["1", "2"]
         },
         {
             "nid": "1527496",
-            "tid": [1, 2]
+            "tid": ["1", "2"]
         },
     ]
 
