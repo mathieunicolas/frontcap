@@ -1,23 +1,31 @@
+export const useCurNote = () => {
+    return ref("0")
+}
+
+export const useGlobalNote = () => {
+    return ref("")
+}
+
 export const useTags = () => {
     const tags = ref([
         {
             "tagID": "1",
-            "tagColor": "#ff0000",
+            "tagColor": "red",
             "label": "SNT"
         },
         {
             "tagID": "2",
-            "tagColor": "#ffff00",
+            "tagColor": "orange",
             "label": "NSI"
         },
         {
             "tagID": "3",
-            "tagColor": "#00ff00",
+            "tagColor": "amber",
             "label": "Corrigé"
         },
         {
             "tagID": "4",
-            "tagColor": "#00ffff",
+            "tagColor": "yellow",
             "label": "Pas Corrigé"
         },
     ])
@@ -25,7 +33,7 @@ export const useTags = () => {
 }
 
 export const useActiTags = () => {
-    const actiTags = [
+    const actiTags = ref([
         {
             "nid": "1325993",
             "tid": ["1", "2"]
@@ -70,7 +78,7 @@ export const useActiTags = () => {
             "nid": "1527496",
             "tid": ["1", "2"]
         },
-    ]
+    ])
 
     return actiTags
 }
@@ -113,7 +121,8 @@ export const useFiles = () => {
             "icon": "\/web\/modules\/custom\/capytale_activity\/src\/Activity\/logo\/logo_nb.svg",
             "provider": "hdf",
             "last_access": "1681564124",
-            "player": "activity_access\/1325993"
+            "player": "activity_access\/1325993",
+            "note": "Note relative au joueur de basket"
         },
         {
             "nid": "1335649",
@@ -152,7 +161,8 @@ export const useFiles = () => {
             "icon": "\/web\/modules\/custom\/capytale_activity\/src\/Activity\/logo\/logo_nb.svg",
             "provider": "hdf",
             "last_access": "1681563821",
-            "player": "activity_access\/1335649"
+            "player": "activity_access\/1335649",
+            "note": "Notes relatives au rendu de monnaie"
         },
         {
             "nid": "1335679",
