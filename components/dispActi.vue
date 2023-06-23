@@ -80,9 +80,6 @@
 </script>
 
 <template>
-    <UTable :rows="tags">
-    </UTable>
-
     <UTable :columns="actiColumns" :rows="files">
     <template #tags-data="{ row }">
 
