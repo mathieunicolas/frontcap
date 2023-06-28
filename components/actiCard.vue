@@ -2,6 +2,9 @@
 const props = defineProps({
   activite: Object
 })
+
+const appState = useAppState()
+
 const toast = useToast()
 
 const star = computed(() => {
@@ -30,6 +33,8 @@ const toggleFav = () => {
 
 const goActi = (event) => {
   if(!event.target.classList.contains('starspin')) {
+    appState.value.creaActiPanel = true
+    appState.value.newActiPanel = false
     toast.add({ description: "Création d'une nouvelle activité", title: props.activite.fullName })
   }
 }

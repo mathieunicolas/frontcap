@@ -1,5 +1,7 @@
 <script setup>
 const props = defineProps(['row'])
+const appState = useAppState()
+
 const newtitle = ref(props.row.title)
 const newstatus = ref(props.row.status_shared)
 
