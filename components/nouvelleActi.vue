@@ -3,108 +3,206 @@ const inputstyle = {
   "base": "relative inline w-auto disabled:cursor-not-allowed disabled:opacity-75 focus:outline-none border-0",
 }
 
-const Data = [
+const typeActivites = useState('typeActivites', () => [
   {
-    fullName: "Poha",
-    description:  "Poha. Light, filling and easy to make, poha is one famous breakfast that is eaten almost everywhere in the country.",
-    category: ['all', 'ecole', 'college', 'lycee'],
-    icon: {
-      path: "https://c.ndtvimg.com/2021-08/loudr2go_aloo-poha_625x300_05_August_21.jpg?im=FeatureCrop,algorithm=dnn,width=620,height=350",
-      style: { color: "red" },
+    "id": "codabloc",
+    "name": "Codabloc",
+    "fav": true,
+    "fullName": "Codabloc",
+    "description": "L'environnement Scratch intégré dans Capytale pour apprendre à programmer avec des blocs.",
+    "summary": "",
+    "icon": {
+      "path": "/web/modules/custom/capytale_activity/src/Activity/logo/logo_codabloc.svg",
+      "style": {
+        "color": "#898dc5",
+        "background-color": "#ffffff"
+      }
     },
-    helpUrl: "https://capytale2.ac-paris.fr/wiki/",
-    star: true,
+    "category": {
+      "all": 10,
+      "ecole": 1,
+      "college": 1,
+      "lycee": 5
+    },
+    "helpUrl": "https://capytale2.ac-paris.fr/wiki/doku.php?id=codabloc",
+    "bundle": "activity"
   },
   {
-    fullName: 'Upma',
-    beta: 1,
-    description:  "A quintessential South Indian Breakfast! Made with protein-packed urad dal and semolina followed by crunchy veggies and curd, this recipe makes for a hearty morning meal.",
-    category: ['all', 'college', 'lycee'],
-    icon: {
-      path: "https://c.ndtvimg.com/2021-04/37hi8sl_rava-upma_625x300_17_April_21.jpg?im=FeatureCrop,algorithm=dnn,width=620,height=350",
-      style: { color: "pink" },
+    "id": "codepuzzle",
+    "name": "Code Puzzle",
+    "fullName": "Code Puzzle",
+    "description": "Générateur et gestionnare de puzzles de Parsons.",
+    "summary": "",
+    "icon": {
+      "path": "/web/modules/custom/capytale_activity/src/Activity/logo/logo_codabloc.svg",
+      "style": {
+        "color": "#79c824",
+        "background-color": "#ffffff"
+      }
     },
-    helpUrl: "https://capytale2.ac-paris.fr/wiki/",
-    star: false,
+    "category": {
+      "all": 10,
+      "ecole": 1,
+      "college": 3,
+      "lycee": 7
+    },
+    "helpUrl": "https://capytale2.ac-paris.fr/wiki/doku.php?id=codepuzzle",
+    "bundle": "activity"
   },
   {
-    fullName: "Cheela",
-    description:  "A staple across Indian households, moong dal is widely used in a number of Indian delicacies.",
-    category: ['all', 'college', 'lycee'],
-    icon: {
-      path: "https://c.ndtvimg.com/2019-05/1afu8vt8_weight-loss-friendly-breakfast-paneer-besan-chilla_625x300_25_May_19.jpg?im=FaceCrop,algorithm=dnn,width=620,height=350",
-      style: { color: "blue" },
+    "id": "console.python3",
+    "name": "Script-Console",
+    "beta": true,
+    "fullName": "Script-Console",
+    "description": "L'environnement classique de programmation : un script Python à gauche et une console d'exécution à droite.",
+    "summary": "",
+    "icon": {
+      "path": "/web/modules/custom/capytale_activity/src/Activity/logo/logo_console.svg",
+      "style": {
+        "color": "#000000",
+        "background-color": "#ffffff"
+      }
     },
-    helpUrl: "https://capytale2.ac-paris.fr/wiki/",
-    star: false,
+    "category": {
+      "all": 10,
+      "college": 30,
+      "lycee": -1,
+      "prepa": 1000
+    },
+    "helpUrl": "https://capytale2.ac-paris.fr/wiki/doku.php",
+    "bundle": "console_activity"
   },
   {
-    fullName: "Channa Kulcha",
-    category: ['all', 'college'],
-    icon: {
-      path: "https://i.ndtvimg.com/i/2015-04/chana-kulcha_625x350_41429707001.jpg",
-      style: { color: "#000" },
+    "id": "geogebra",
+    "name": "GeoGebra",
+    "beta": true,
+    "fullName": "GeoGebra",
+    "description": "Géométrie dynamique avec Geogebra enrichi des fonctionnalités pédagogiques de Capytale.",
+    "summary": "",
+    "icon": {
+      "path": "/web/modules/custom/capytale_activity/src/Activity/logo/logo_geogebra.svg",
+      "style": {
+        "color": "#9999ff",
+        "background-color": "#ffffff"
+      }
     },
-    helpUrl: "https://capytale2.ac-paris.fr/wiki/",
-    description:  "A classic dish that never goes out of style.",
-    star: true,
+    "category": {
+      "all": 10,
+      "ecole": 1,
+      "college": 1,
+      "lycee": 5
+    },
+    "helpUrl": "https://capytale2.ac-paris.fr/wiki/doku.php?id=geogebra",
+    "bundle": "activity"
   },
   {
-    fullName: "Egg Curry",
-    category: ['all', 'prepa'],
-    icon: {
-      path: "https://i.ndtvimg.com/i/2017-11/goan-egg-curry_620x350_41511515276.jpg",
-      style: { color: "#000" },
+    "id": "html",
+    "name": "HTML/CSS/JS",
+    "fullName": "HTML/CSS/JS",
+    "description": "Découvrir les langaes du Web : html, CSS et JavaScript.",
+    "summary": "",
+    "icon": {
+      "path": "/web/modules/custom/capytale_activity/src/Activity/logo/logo_html.svg",
+      "style": {
+        "color": "#0b5394",
+        "background-color": "#ffffff"
+      }
     },
-    helpUrl: "https://capytale2.ac-paris.fr/wiki/",
-    description:  "Eggs are a versatile food that can be cooked for any meal of the day.",
-    star: false,
+    "category": {
+      "all": 10,
+      "college": 10,
+      "lycee": 3
+    },
+    "helpUrl": "https://capytale2.ac-paris.fr/wiki/doku.php?id=html",
+    "bundle": "activity"
   },
   {
-    fullName: "Paneer Aachari",
-    category: ['all', 'prepa'],
-    icon: {
-      path: "https://i.ndtvimg.com/i/2015-04/paneer_625x350_61429707960.jpg",
-      style: { color: "#000" },
+    "id": "notebook.ocaml",
+    "name": "OCaml",
+    "fullName": "Notebook OCaml",
+    "description": "Le langage OCaml dans un notebook.",
+    "summary": "",
+    "icon": {
+      "path": "/web/modules/custom/capytale_activity/src/Activity/logo/logo_ocaml.svg",
+      "style": {
+        "color": "#de7932",
+        "background-color": "#ffffff"
+      }
     },
-    helpUrl: "https://capytale2.ac-paris.fr/wiki/",
-    description:  "Dont get intimidated by the list of ingredients because they are already in your kitchen cabinet.",
-    star: false,
+    "category": {
+      "all": 10,
+      "prepa": 5
+    },
+    "helpUrl": "https://capytale2.ac-paris.fr/p/basthon/n/?id=330758&kernel=ocaml",
+    "bundle": "notebook_activity"
   },
   {
-    fullName: "Fish Fry",
-    category: ['all', 'ecole'],
-    icon: {
-      path: "https://i.ndtvimg.com/i/2015-06/indian-dinner_625x350_41434360207.jpg",
-      style: { color: "#000" },
+    "id": "notebook.python3",
+    "name": "Notebook",
+    "fullName": "Notebook Python",
+    "description": "Python dans un notebook Jupyter : une alternance de cellules de texte riche et de cellules de code exécutables.",
+    "summary": "",
+    "icon": {
+      "path": "/web/modules/custom/capytale_activity/src/Activity/logo/logo_nb.svg",
+      "style": {
+        "color": "#ff6402",
+        "background-color": "#ffffff"
+      }
     },
-    helpUrl: "https://capytale2.ac-paris.fr/wiki/",
-    description:  "Get your daily dose of perfect protein.",
-    star: false,
+    "category": {
+      "all": 10,
+      "college": 30,
+      "lycee": -1,
+      "prepa": 1000
+    },
+    "helpUrl": "https://capytale2.ac-paris.fr/wiki/doku.php?id=notebook",
+    "bundle": "notebook_activity"
   },
   {
-    fullName: "Dum Alloo",
-    category: ['all', 'ecole'],
-    icon: {
-      path: "https://i.ndtvimg.com/i/2015-06/indian-dinner_625x350_51434362664.jpg",
-      style: { color: "#000" },
+    "id": "notebook.sql",
+    "name": "SQL",
+    "fullName": "Notebook SQL",
+    "description": "Le langage SQL dans un notebook.",
+    "summary": "",
+    "icon": {
+      "path": "/web/modules/custom/capytale_activity/src/Activity/logo/logo_sql.svg",
+      "style": {
+        "color": "#f1c232",
+        "background-color": "#ffffff"
+      }
     },
-    helpUrl: "https://capytale2.ac-paris.fr/wiki/",
-    description:  "Your family will thank you for this absolutely fantastic bowl of dum aloo cooked Lakhnawi style.",
-    star: false,
+    "category": {
+      "all": 10,
+      "college": 30,
+      "lycee": -1,
+      "prepa": 1000
+    },
+    "helpUrl": "https://capytale2.ac-paris.fr/p/basthon/n/?id=42529&kernel=sql",
+    "bundle": "notebook_activity"
   },
   {
-    fullName: "Malai Kofta",
-    category: ['all', 'ecole'],
-    icon: {
-      path: "https://i.ndtvimg.com/i/2017-10/makhmali-kofte_620x350_51508918483.jpg",
-      style: { color: "#000" },
+    "id": "pixel",
+    "name": "Pixel Art",
+    "fullName": "Pixel Art",
+    "description": "Construire un dessin pixelisé avec des blocs de code.",
+    "summary": "",
+    "icon": {
+      "path": "/web/modules/custom/capytale_activity/src/Activity/logo/logo_pixel.svg",
+      "style": {
+        "color": "#898dc5",
+        "background-color": "#ffffff"
+      }
     },
-    helpUrl: "https://capytale2.ac-paris.fr/wiki/",
-    description:  "A rich gravy made of khus khus, coconut and milk that tastes best with koftas made from khoya.",
-    star: false,
-  },
-]
+    "category": {
+      "all": 10,
+      "ecole": 1,
+      "college": 1,
+      "lycee": 5
+    },
+    "helpUrl": "https://capytale2.ac-paris.fr/wiki/doku.php?id=codabloc",
+    "bundle": "activity"
+  }
+])
 
 const cats = [
     {
@@ -134,22 +232,53 @@ const cats = [
 ]
 
 const catChoice = ref('all')
+const dispChoice = ref(false)
+const cosmos = ref(dispChoice.value ? 'px-4 py-4 sm:px-6' : 'p-0')
 
 const chosenCats = computed(() => {
   console.log(catChoice.value)
-  return Data.filter(el => el.category.includes(catChoice.value))
+  return typeActivites.value.filter(el => Object.keys(el.category).includes(catChoice.value) || (catChoice.value == 'fav' && el.fav))
 })
+
+const openPanel = (event) => {
+  dispChoice.value = !dispChoice.value
+}
+
+watch(typeActivites, () => {
+  console.log(typeActivites)
+})
+
+const itemRefs = ref([])
 </script>
 
 <template>
-    <UCard>
+    <UCard :ui="{ body: { padding: cosmos }}">
     <template #header>
     <div class="flex flex-row justify-between">
-        <div class="text-lg font-bold">Créer une nouvelle activité</div>
+        <div class="text-lg font-bold">
+        <UIcon @click="openPanel" :class="dispChoice?'rotate-180':''" class="transition-all" name="i-heroicons-arrow-down"></UIcon>
+        Créer une nouvelle activité</div>
         <USelect v-model="catChoice" :options="cats" :ui="inputstyle"></USelect>
     </div>
     </template>
-    <ActiCard v-for="item in chosenCats" :key="item.fullName" :typeActi="item">
-        </ActiCard>
+    <Transition @afterLeave="cosmos = 'p-0'">
+    <div class="grid grid-cols-2" v-if="dispChoice">
+    <ActiCard class="" v-for="item in chosenCats" ref="test" :key="item.fullName" :activite="item"></ActiCard>
+    </div>
+  </Transition>
     </UCard>
 </template>
+
+<style>
+.v-enter-active,
+.v-leave-active {
+  transition: all 0.75s ease-out;
+  max-height: 1000px;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+  max-height: 0;
+}
+</style>
