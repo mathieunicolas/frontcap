@@ -41,7 +41,7 @@ const goActi = (event) => {
 </script>
 
 <template>
-    <div class="flex flex-row rounded-2xl m-4 shadow-md cursor-pointer" @click="goActi">
+    <div class="flex flex-row rounded-2xl m-4 cursor-pointer hover:shadow-md" @click="goActi">
 
       <img :src="'https://capytale2.ac-paris.fr'.concat(activite.icon.path)" class="w-16 self-start" />
       
