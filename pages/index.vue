@@ -10,6 +10,6 @@ const appState = useAppState()
       <ActiChoice v-if="appState.actiChoice"></ActiChoice>
       <ActiCrea></ActiCrea>
       <DispActi v-if="appState.dispActi"></DispActi>
-      <DispActiEleves></DispActiEleves>
+      <DispActiEleves v-if="appState.actiEleves"></DispActiEleves>
     </div>
 </template>

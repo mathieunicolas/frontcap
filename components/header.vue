@@ -15,6 +15,7 @@ const appState = useAppState()
   <div class="header sticky top-0 z-50 w-full backdrop-blur flex-none border-b border-gray-900/10 dark:border-gray-50/[0.06] bg-white/75 dark:bg-gray-900/75">
   <span class="titre">CAPYTALE</span>
   <div class="menu">
+    <UButton :icon="appState.actiEleves ? 'i-heroicons-eye-slash' : 'i-heroicons-eye'" label="Activités élèves" variant="ghost" @click="appState.actiEleves = !appState.actiEleves"></UButton>
     <UButton :icon="appState.dispActi ? 'i-heroicons-eye-slash' : 'i-heroicons-eye'" label="Mes activités" variant="ghost" @click="appState.dispActi = !appState.dispActi"></UButton>
     <UButton :icon="appState.actiChoice ? 'i-heroicons-eye-slash' : 'i-heroicons-eye'" label="ActiChoice" variant="ghost" @click="appState.actiChoice = !appState.actiChoice"></UButton>
     <UButton

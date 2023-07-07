@@ -4,7 +4,8 @@ export const useAppState = () => {
     'newActiPanel': false,
     'actiCrea': false,
     'dispActi': false,
-    'actiChoice' : false
+    'actiChoice' : false,
+    'actiEleves': false
   }
   })
 }
