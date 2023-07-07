@@ -2,7 +2,9 @@ export const useAppState = () => {
   return useState('appState', () => {
     return {
     'newActiPanel': false,
-    'creaActiPanel': false
+    'actiCrea': false,
+    'dispActi': false,
+    'actiChoice' : false
   }
   })
 }

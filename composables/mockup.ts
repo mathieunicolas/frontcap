@@ -1,3 +1,17 @@
+export const useActiEleves = () => {
+    const datatest = useState('actiEleves', () => [])
+    
+    const exec = async () => {
+        const req = await useFetch('https://api.npoint.io/275683f062ca07a29b1c')
+        datatest.value = req.data
+    }
+    
+    exec()
+    
+    return datatest
+}
+
+
 export const useActivites = () => useState('typeActivites', () => [
     {
       "id": "codabloc",

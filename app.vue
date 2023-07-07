@@ -1,7 +1,5 @@
 <script setup>
 const test = useFiles()
-const req = await useFetch('https://api.npoint.io/275683f062ca07a29b1c')
-const data = req.data
 </script>
 
 <template>

@@ -7,8 +7,9 @@ const appState = useAppState()
   <AsideMenu class="hidden pb-8 overflow-y-auto lg:block lg:self-start lg:top-16 lg:max-h-[calc(100vh-64px)] lg:sticky lg:pr-8 lg:pl-[2px] lg:col-span-2">
   </AsideMenu>
     <div class="lg:col-span-8">
-      <ActiChoice></ActiChoice>
-      <actiCrea></actiCrea>
-      <DispActi></DispActi>
+      <ActiChoice v-if="appState.actiChoice"></ActiChoice>
+      <ActiCrea></ActiCrea>
+      <DispActi v-if="appState.dispActi"></DispActi>
+      <DispActiEleves></DispActiEleves>
     </div>
 </template>
