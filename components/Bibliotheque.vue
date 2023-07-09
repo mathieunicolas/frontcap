@@ -26,6 +26,11 @@ const columns = [{
   }, {
     label: 'Auteur',
     key: 'g'
+  },{
+    label: 'modifié',
+    key: 'date',
+    sortable: true,
+    direction: 'desc'
   }
   ]
 </script>
@@ -63,6 +68,10 @@ const columns = [{
       <a :href="row.url_star">
         <UIcon name="i-heroicons-star" />
       </a>
+    </template>
+
+    <template #date-data="{ row }">
+      {{ (new Date(row.date*1000)).toLocaleString("fr-FR", {year: "numeric", month: "numeric", day: "numeric"}) }}
     </template>
   </UTable>
 
