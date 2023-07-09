@@ -18,11 +18,10 @@ export const useBibli = () => {
     }
 
     const dataDate = (plop) => {
-        console.log(plop.value)
         plop.forEach(el => {
-            console.log(el.date)
-            el.date = el.date.timestamp
-            console.log(el.date)
+            if(el.date.timestamp) {
+                el.date = el.date.timestamp
+            }
         })
         return plop
     }
@@ -30,7 +29,6 @@ export const useBibli = () => {
     const exec = async () => {
         if(process.env.NODE_ENV === 'development') {
             useFetch('https://capytaledev.ac-paris.fr/web/export?_=1688922855351', { headers }).then(rq => {
-                console.log(rq.data.value)
                 datatest.value = dataDate(rq.data.value)
             })
         } else {

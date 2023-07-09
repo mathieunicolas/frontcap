@@ -1,10 +1,22 @@
 
 <script setup>
+import { orderBy } from 'lodash-es'
+
 const data = useBibli()
 const page = ref(1)
 const pageCount = ref(10)
 
 const clipboard = useCopyToClipboard({ timeout: 2000})
+
+const sortingRows = (column, direction) => {
+  console.log(direction)
+  return data.value.toSorted((a,b) => {
+    if(direction === 'asc'){
+      return (a[column] - b[column])
+    } else if(direction === 'desc') {
+      return (b[column] - a[column])
+    }}).slice((page.value - 1)*pageCount.value, (page.value)*pageCount.value)
+}
 
 const pagiData = computed(() => {
   return data.value.slice((page.value - 1)*pageCount.value, (page.value)*pageCount.value)
@@ -37,7 +49,7 @@ const columns = [{
 
 <template>
   bibli
-  <UTable :rows="pagiData" :columns="columns" :ui="{ td: { base: 'whitespace-normal break-all'}}">
+  <UTable :rows="pagiData" :columns="columns" :ui="{ td: { base: 'whitespace-normal break-all'}}" :sorting-rows="sortingRows">
     <template #type-data="{ row }">
       <img :src="'https://capytaledev.ac-paris.fr'+row.icon" class="w-16 max-w-none" />
     </template>
