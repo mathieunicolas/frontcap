@@ -2,7 +2,7 @@
 const base = process.env.NODE_ENV === 'development' ? '/' : '/p/nuxt'
 
 export default defineNuxtConfig({
-  modules: ['@nuxthq/ui'],
+  modules: ['@nuxthq/ui', '@vueuse/nuxt'],
   devtools: { enabled: true },
   css: ['@/assets/main.css'],
   ui: {
