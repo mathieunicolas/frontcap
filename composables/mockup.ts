@@ -11,6 +11,19 @@ export const useActiEleves = () => {
     return datatest
 }
 
+export const useBibli = () => {
+    const datatest = useState('bibli', () => [])
+    
+    const exec = async () => {
+        const req = await useFetch('https://capytaledev.ac-paris.fr/web/export?_=1688922473816')
+        datatest.value = req.data
+    }
+    
+    exec()
+    
+    return datatest
+}
+
 
 export const useActivites = () => useState('typeActivites', () => [
     {

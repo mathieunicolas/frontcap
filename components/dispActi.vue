@@ -6,13 +6,6 @@
     const actiTags = useActiTags()
     const actiColumns = [
         {
-            "key": "nid",
-            "label": "ID"
-        },
-        {
-            "key": "modify"
-        },
-        {
             "key": "note"
         },
         {
@@ -22,6 +15,9 @@
         {
             "key": "tags",
             "label": "Étiquettes"
+        },
+        {
+            "key": "modify"
         },
         {
             "key": "actions"

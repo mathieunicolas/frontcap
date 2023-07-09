@@ -1,11 +1,14 @@
 export const useAppState = () => {
   return useState('appState', () => {
     return {
+    'aside': true,
+    'profile': 'prof',
     'newActiPanel': false,
     'actiCrea': false,
     'dispActi': false,
     'actiChoice' : false,
-    'actiEleves': false
+    'actiEleves': false,
+    'bibli': true
   }
   })
 }

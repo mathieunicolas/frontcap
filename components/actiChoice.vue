@@ -52,21 +52,21 @@ const itemRefs = ref([])
 </script>
 
 <template>
+    <UModal v-model="appState.actiChoice" :ui="{ width: 'sm:max-w-3xl' }">
     <UCard :ui="{ body: { padding: cosmos }}">
-    <template #header>
-    <div class="flex flex-row justify-between">
-        <div class="text-lg font-bold">
-        <UIcon @click="openPanel" :class="appState.newActiPanel?'rotate-180':''" class="transition-all" name="i-heroicons-arrow-down"></UIcon>
-        Créer une nouvelle activité</div>
-        <USelect v-model="catChoice" :options="cats" :ui="inputstyle"></USelect>
-    </div>
-    </template>
-    <Transition @afterLeave="cosmos = 'p-0'">
-    <div class="grid grid-cols-2" v-if="appState.newActiPanel">
-    <ActiCard class="" v-for="item in chosenCats" ref="test" :key="item.fullName" :activite="item"></ActiCard>
-    </div>
-  </Transition>
+      <template #header>
+      <div class="flex flex-row justify-between">
+          <div class="text-lg font-bold">
+          <UIcon @click="openPanel" :class="appState.newActiPanel?'rotate-180':''" class="transition-all" name="i-heroicons-arrow-down"></UIcon>
+          Créer une nouvelle activité</div>
+          <USelect v-model="catChoice" :options="cats" :ui="inputstyle"></USelect>
+      </div>
+      </template>
+      <div class="grid grid-cols-2">
+      <ActiCard class="" v-for="item in chosenCats" ref="test" :key="item.fullName" :activite="item"></ActiCard>
+      </div>
     </UCard>
+    </UModal>
 </template>
 
 <style>
