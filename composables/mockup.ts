@@ -16,23 +16,31 @@ export const useBibli = () => {
     const headers = {
         Cookie: '_pk_id.3.e2ad=f3bf82a8759c8d86.1688925797.; _pk_ses.3.e2ad=1; SSESS9d1010d19c1d067dcd814c05f5d72671=fe4gagNUgq0UtrX777VZbQvxdagM3ndWnERKjCVMEHln8Cdg'
     }
+
+    const dataDate = (plop) => {
+        console.log(plop.value)
+        plop.forEach(el => {
+            console.log(el.date)
+            el.date = el.date.timestamp
+            console.log(el.date)
+        })
+        return plop
+    }
+
     const exec = async () => {
         if(process.env.NODE_ENV === 'development') {
-            const req = await useFetch('https://capytaledev.ac-paris.fr/web/export?_=1688922855351', { headers })
-            datatest.value = req.data
+            useFetch('https://capytaledev.ac-paris.fr/web/export?_=1688922855351', { headers }).then(rq => {
+                console.log(rq.data.value)
+                datatest.value = dataDate(rq.data.value)
+            })
         } else {
             const req = await $fetch('https://capytaledev.ac-paris.fr/web/export?_=1688922855351')
-            datatest.value = req
+            datatest.value = dataDate(req)
         }
     }
     
     exec()
     
-    datatest.value.forEach(el => {
-        console.log(el.date)
-        el.date = el.date.timestamp
-        console.log(el.date)
-    })
     return datatest
 }
 
