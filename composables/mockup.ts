@@ -13,9 +13,9 @@ export const useActiEleves = () => {
 
 export const useBibli = () => {
     const datatest = useState('bibli', () => [])
-    
+    const headers = useRequestHeaders(['cookie'])
     const exec = async () => {
-        const req = await useFetch('https://capytaledev.ac-paris.fr/web/export?_=1688922855351')
+        const req = await useFetch('https://capytaledev.ac-paris.fr/web/export?_=1688922855351', { headers })
         datatest.value = req.data
     }
     
