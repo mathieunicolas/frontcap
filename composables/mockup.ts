@@ -15,7 +15,7 @@ export const useBibli = () => {
     const datatest = useState('bibli', () => [])
     
     const exec = async () => {
-        const req = await useFetch('https://capytaledev.ac-paris.fr/web/export?_=1688922473816')
+        const req = await useFetch('https://capytaledev.ac-paris.fr/web/export?_=1688922855351')
         datatest.value = req.data
     }
     
