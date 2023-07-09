@@ -47,6 +47,11 @@ const columns = [{
     direction: 'desc'
   }
   ]
+
+  const starf = async (url) => {
+    const res = await $fetch(url)
+    console.log(res)
+  }
 </script>
 
 <template>
@@ -78,6 +83,7 @@ const columns = [{
 
     <template #nb_star-data="{ row }">
     <div>
+        <UButton label="O" @click="starf(row.url_star)" />
         <UButton :icon="row.star_status === 'far' ? 'i-heroicons-star' : 'i-heroicons-star-solid'" :label="row.nb_star.toString()" variant="ghost" :to="row.url_star" size="xl" trailing />
       </div>
     </template>
