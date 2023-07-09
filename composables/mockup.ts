@@ -25,7 +25,7 @@ export const useBibli = () => {
     const exec = async () => {
         const req = await $fetch('https://capytaledev.ac-paris.fr/web/export?_=1688922855351')
         console.log(req)
-        datatest.value = req.data
+        datatest.value = req
     }
     
     exec()
