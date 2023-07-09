@@ -9,7 +9,6 @@ const pageCount = ref(10)
 const clipboard = useCopyToClipboard({ timeout: 2000})
 
 const sortingRows = (column, direction) => {
-  console.log(direction)
   return data.value.toSorted((a,b) => {
     if(direction === 'asc'){
       return (a[column] - b[column])
@@ -36,6 +35,9 @@ const columns = [{
     label: 'Like',
     key: 'nb_star'
   }, {
+    label: 'Copie',
+    key: 'nb_clone'
+  }, {
     label: 'Auteur',
     key: 'g'
   },{
@@ -45,11 +47,16 @@ const columns = [{
     direction: 'desc'
   }
   ]
+
+  const starf = async (url) => {
+    const res = await $fetch(url)
+    console.log(res)
+  }
 </script>
 
 <template>
   bibli
-  <UTable :rows="pagiData" :columns="columns" :ui="{ td: { base: 'whitespace-normal break-all'}}" :sorting-rows="sortingRows">
+  <UTable :rows="pagiData" :columns="columns" :ui="{ td: { base: 'whitespace-normal break-all glo6 glo5', padding: 'px-3 py-4 '}}" :sorting-rows="sortingRows">
     <template #type-data="{ row }">
       <img :src="'https://capytaledev.ac-paris.fr'+row.icon" class="w-16 max-w-none" />
     </template>
@@ -76,10 +83,13 @@ const columns = [{
     </template>
 
     <template #nb_star-data="{ row }">
-      {{ row.nb_star }}
-      <a :href="row.url_star">
-        <UIcon name="i-heroicons-star" />
-      </a>
+    <div>
+        <UButton @click="starf(row.url_star).then(res => console.log(res))" :icon="row.star_status === 'far' ? 'i-heroicons-star' : 'i-heroicons-star-solid'" :label="row.nb_star.toString()" variant="ghost" size="xl" trailing />
+      </div>
+    </template>
+
+    <template #nb_clone-data="{ row }">
+        <UButton icon="i-heroicons-document-duplicate" :label="row.nb_clone.toString()" variant="ghost" :to="row.url_clone" size="xl" trailing />
     </template>
 
     <template #date-data="{ row }">
@@ -91,6 +101,5 @@ const columns = [{
 
 </template>
 
-<style>
-
+<style scoped>
 </style>
