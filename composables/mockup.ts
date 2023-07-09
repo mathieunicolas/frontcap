@@ -16,6 +16,7 @@ export const useBibli = () => {
     const headers = useRequestHeaders(['cookie'])
     const exec = async () => {
         const req = await useFetch('https://capytaledev.ac-paris.fr/web/export?_=1688922855351', { headers })
+        console.log(req)
         datatest.value = req.data
     }
     
