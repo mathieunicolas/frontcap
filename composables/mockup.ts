@@ -23,7 +23,7 @@ export const useBibli = () => {
         Cookie: '_pk_id.3.e2ad=f3bf82a8759c8d86.1688925797.; _pk_ses.3.e2ad=1; SSESS9d1010d19c1d067dcd814c05f5d72671=fe4gagNUgq0UtrX777VZbQvxdagM3ndWnERKjCVMEHln8Cdg'
     }
     const exec = async () => {
-        const req = await useFetch('https://capytaledev.ac-paris.fr/web/export?_=1688922855351', { headers })
+        const req = await $fetch('https://capytaledev.ac-paris.fr/web/export?_=1688922855351')
         console.log(req)
         datatest.value = req.data
     }
