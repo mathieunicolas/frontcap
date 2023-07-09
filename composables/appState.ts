@@ -1,7 +1,7 @@
 export const useAppState = () => {
   return useState('appState', () => {
     return {
-    'aside': true,
+    'aside': false,
     'profile': 'prof',
     'newActiPanel': false,
     'actiCrea': false,

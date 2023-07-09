@@ -24,6 +24,7 @@ const appState = useAppState()
     <div class="menu">
       <USelect v-model="appState.profile" :options="profiles"></USelect>
       <UButton :icon="appState.actiEleves ? 'i-heroicons-eye-slash' : 'i-heroicons-eye'" label="Activités élèves" variant="ghost" @click="appState.actiEleves = !appState.actiEleves"></UButton>
+      <UButton :icon="appState.aside ? 'i-heroicons-eye-slash' : 'i-heroicons-eye'" label="menu" variant="ghost" @click="appState.aside = !appState.aside"></UButton>
       <UButton :icon="appState.dispActi ? 'i-heroicons-eye-slash' : 'i-heroicons-eye'" label="Mes activités" variant="ghost" @click="appState.dispActi = !appState.dispActi"></UButton>
       <UButton :icon="appState.actiChoice ? 'i-heroicons-eye-slash' : 'i-heroicons-eye'" label="ActiChoice" variant="ghost" @click="appState.actiChoice = !appState.actiChoice"></UButton>
       <UButton

@@ -47,15 +47,9 @@ const columns = [{
     direction: 'desc'
   }
   ]
-
-  const starf = async (url) => {
-    const res = await $fetch(url)
-    console.log(res)
-  }
 </script>
 
 <template>
-  bibli
   <UTable :rows="pagiData" :columns="columns" :ui="{ td: { base: 'whitespace-normal break-all glo6 glo5', padding: 'px-3 py-4 '}}" :sorting-rows="sortingRows">
     <template #type-data="{ row }">
       <img :src="'https://capytaledev.ac-paris.fr'+row.icon" class="w-16 max-w-none" />
@@ -84,7 +78,7 @@ const columns = [{
 
     <template #nb_star-data="{ row }">
     <div>
-        <UButton @click="starf(row.url_star).then(res => console.log(res))" :icon="row.star_status === 'far' ? 'i-heroicons-star' : 'i-heroicons-star-solid'" :label="row.nb_star.toString()" variant="ghost" size="xl" trailing />
+        <UButton :icon="row.star_status === 'far' ? 'i-heroicons-star' : 'i-heroicons-star-solid'" :label="row.nb_star.toString()" variant="ghost" :to="row.url_star" size="xl" trailing />
       </div>
     </template>
 
