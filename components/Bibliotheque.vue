@@ -39,7 +39,7 @@ const columns = [{
   bibli
   <UTable :rows="pagiData" :columns="columns" :ui="{ td: { base: 'whitespace-normal break-all'}}">
     <template #type-data="{ row }">
-      <img :src="'https://capytaledev.ac-paris.fr/'+row.icon" class="w-16 max-w-none" />
+      <img :src="'https://capytaledev.ac-paris.fr'+row.icon" class="w-16 max-w-none" />
     </template>
 
     <template #c-data="{ row }">
@@ -47,7 +47,7 @@ const columns = [{
     </template>
 
     <template #title-data="{ row }">
-    <UButton variant="link" :to="row.player_url">{{ row.title }}</UButton>
+    <UButton variant="link" :to="'https://capytaledev.ac-paris.fr'+row.player_url">{{ row.title }}</UButton>
     <div class="p-1" v-html="row.c"></div>
     </template>
 
