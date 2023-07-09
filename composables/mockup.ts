@@ -29,7 +29,9 @@ export const useBibli = () => {
     exec()
     
     datatest.value.forEach(el => {
+        console.log(el.date)
         el.date = el.date.timestamp
+        console.log(el.date)
     })
     return datatest
 }
