@@ -240,4 +240,5 @@ export default defineComponent({
 .glo3:nth-child(3) {
   padding: 0;
 }
+
 </style>
