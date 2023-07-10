@@ -50,7 +50,9 @@ const columns = [{
 
   const starf = async (url) => {
     const res = await $fetch(url)
-    console.log(res)
+    if(res) {
+      console.log('Like / Unlike OK')
+    }
 
     const dataDate = (plop) => {
         plop.forEach(el => {
