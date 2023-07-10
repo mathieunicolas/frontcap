@@ -51,6 +51,29 @@ const columns = [{
   const starf = async (url) => {
     const res = await $fetch(url)
     console.log(res)
+
+    const dataDate = (plop) => {
+        plop.forEach(el => {
+            if(el.date.timestamp) {
+                el.date = el.date.timestamp
+            }
+        })
+        return plop
+    }
+
+    const exec = async () => {
+        if(process.env.NODE_ENV === 'development') {
+            useFetch('https://capytaledev.ac-paris.fr/web/export?_=1688922855351', { headers }).then(rq => {
+                data.value = dataDate(rq.data.value)
+            })
+        } else {
+            const req = await $fetch('https://capytaledev.ac-paris.fr/web/export?_=1688922855351')
+            data.value = dataDate(req)
+        }
+    }
+    
+    exec()
+
   }
 </script>
 
